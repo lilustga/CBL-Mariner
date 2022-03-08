@@ -12,18 +12,17 @@
 %define __find_requires %{nil}
 Summary:        Go
 Name:           golang
-Version:        1.17.1
-Release:        2%{?dist}
+Version:        1.18~rc1
+Release:        1%{?dist}
 License:        BSD
 Vendor:         Microsoft Corporation
 Distribution:   Mariner
 Group:          System Environment/Security
 URL:            https://golang.org
-Source0:        https://golang.org/dl/go%{version}.src.tar.gz
+Source0:        https://golang.org/dl/go1.18rc1.src.tar.gz
 Source1:        https://dl.google.com/go/go1.4-bootstrap-20171003.tar.gz
 Patch0:         go14_bootstrap_aarch64.patch
 Obsoletes:      %{name} < %{version}
-Provides:       %{name} = %{version}
 Provides:       go = %{version}-%{release}
 
 %description
@@ -116,6 +115,9 @@ fi
 %{_bindir}/*
 
 %changelog
+* Tue Mar 08 2022 Thomas Crain <thcrain@microsoft.com> - 1.18~rc1-1
+- Upgrade to 1.18 release candidate
+
 * Thu Feb 17 2022 Andrew Phelps <anphel@microsoft.com> - 1.17.1-2
 - Use _topdir instead of hard-coded value /usr/src/mariner
 - License verified
